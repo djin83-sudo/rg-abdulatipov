@@ -1,0 +1,122 @@
+/**
+ * assets/css/style.css
+ * Основные стили сайта Рамзана Абдулатипова
+ */
+
+:root {
+  --color-navy: #1a2849;
+  --color-navy-dark: #0f1a2e;
+  --color-gray: #f5f7fa;
+  --color-gray-dark: #6c757d;
+  --color-accent: #c9a961;
+  --color-white: #ffffff;
+  --font-serif: 'Georgia', 'Times New Roman', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background: var(--color-white);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-navy);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-inner { display: flex; justify-content: space-between; align-items: center; }
+.site-logo { display: flex; align-items: center; gap: 15px; text-decoration: none; color: white; }
+.logo-monogram {
+  width: 60px; height: 60px; background: var(--color-accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; font-weight: bold; color: var(--color-navy);
+  border-radius: 4px;
+}
+
+.logo-text strong { display: block; font-size: 18px; }
+.logo-text em { display: block; font-size: 13px; font-style: normal; opacity: 0.8; }
+
+.main-nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
+.main-nav a { color: white; text-decoration: none; transition: color 0.2s; }
+.main-nav a:hover { color: var(--color-accent); }
+.btn-buklet { background: var(--color-accent); color: var(--color-navy); padding: 8px 16px; border-radius: 4px; font-weight: 600; }
+
+/* Hero */
+.hero { background: var(--color-gray); padding: 80px 0; }
+.hero-content { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; }
+.hero-image img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
+.hero h1 { margin: 0 0 15px; }
+.hero-subtitle { font-size: 1.2rem; color: var(--color-navy); font-weight: 600; margin: 0 0 20px; }
+.hero-description { font-size: 1.05rem; line-height: 1.8; margin: 0 0 30px; }
+.hero-actions { display: flex; gap: 15px; }
+
+/* Buttons */
+.btn {
+  display: inline-block; padding: 12px 30px; border-radius: 4px;
+  text-decoration: none; font-weight: 600; transition: all 0.3s;
+}
+.btn-primary { background: var(--color-navy); color: white; }
+.btn-primary:hover { background: var(--color-navy-dark); }
+.btn-outline { border: 2px solid var(--color-navy); color: var(--color-navy); background: transparent; }
+.btn-outline:hover { background: var(--color-navy); color: white; }
+
+/* Sections */
+.section { padding: 60px 0; }
+.section-title { text-align: center; margin: 0 0 40px; font-size: 2.2rem; }
+
+/* Achievements */
+.achievements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+.achievement-card {
+  background: white; padding: 30px; border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s;
+}
+.achievement-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+.achievement-card h3 { margin: 0 0 15px; color: var(--color-navy); font-size: 1.3rem; }
+.achievement-card p { margin: 0; color: var(--color-gray-dark); }
+
+/* Footer */
+.site-footer { background: var(--color-navy); color: white; padding: 50px 0 20px; margin-top: 60px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 30px; }
+.footer-monogram { font-size: 36px; font-weight: bold; color: var(--color-accent); display: block; margin-bottom: 15px; }
+.footer-col h3 { font-size: 1.1rem; margin: 0 0 15px; color: var(--color-accent); }
+.footer-col ul { list-style: none; margin: 0; padding: 0; }
+.footer-col a { color: rgba(255,255,255,0.8); text-decoration: none; display: block; padding: 5px 0; }
+.footer-col a:hover { color: white; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; opacity: 0.7; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  .hero-content { grid-template-columns: 1fr; text-align: center; }
+  .main-nav { display: none; }
+  .nav-toggle { display: block; }
+}
